@@ -1,1 +1,4 @@
-@charset "ISO-8859-1";
+.bobo{
+	border-bottom: 1px solid black;
+	height: 500px;
+}
