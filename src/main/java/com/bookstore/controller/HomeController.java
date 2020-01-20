@@ -1,8 +1,11 @@
 package com.bookstore.controller;
 
+import java.util.Locale;
+
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 
 @Controller
 public class HomeController {
@@ -26,8 +29,11 @@ public class HomeController {
 		return "register";
 	}
 	
-	@RequestMapping("/forgetpassword")
-	public String forgetpassword() {
-		return "forgetpassword";
+	@RequestMapping("/forgetPassword")
+	public String forgetPassword(
+			Locale locale,
+			@RequestParam("token") String token) {
+		PasswordResetToken passToken = userService.getPasswordResetToken(token);
+		return "forgetPassword";
 	}
 }

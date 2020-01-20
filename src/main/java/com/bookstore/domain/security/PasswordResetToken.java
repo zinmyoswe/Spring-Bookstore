@@ -85,5 +85,11 @@ public class PasswordResetToken {
 	public static int getExpiration() {
 		return EXPIRATION;
 	}
+
+	@Override
+	public String toString() {
+		return "PasswordResetToken [id=" + id + ", token=" + token + ", user=" + user + ", expiryDate=" + expiryDate
+				+ "]";
+	}
 	
 }
