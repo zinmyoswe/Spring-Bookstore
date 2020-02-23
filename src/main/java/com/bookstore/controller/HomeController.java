@@ -59,7 +59,7 @@ public class HomeController {
 		return "login";
 	}
 	
-	@RequestMapping(value="/register", method=RequestMethod.POST)
+	@RequestMapping(value="/newUser", method=RequestMethod.POST)
 	public String newUserPost(
 			HttpServletRequest request,
 			@ModelAttribute("email") String userEmail,
@@ -110,7 +110,7 @@ public class HomeController {
 		return "myAccount";
 	}
 	
-	@RequestMapping("/register")
+	@RequestMapping("/newUser")
 	public String register(Locale locale, @RequestParam("token") String token, Model model) {
 		PasswordResetToken passToken = userService.getPasswordResetToken(token);
 		
