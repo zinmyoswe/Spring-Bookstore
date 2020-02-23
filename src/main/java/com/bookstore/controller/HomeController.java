@@ -9,6 +9,7 @@ import java.util.UUID;
 import javax.servlet.http.HttpServletRequest;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.mail.SimpleMailMessage;
 import org.springframework.mail.javamail.JavaMailSender;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
 import org.springframework.security.core.Authentication;
@@ -28,12 +29,13 @@ import com.bookstore.domain.security.UserRole;
 import com.bookstore.service.UserService;
 import com.bookstore.service.impl.UserSecurityService;
 import com.bookstore.utility.SecurityUtility;
+import com.bookstore.utility.MailConstructor;
 
 @Controller
 public class HomeController {
 	
 	@Autowired
-	private JavaMailSender mainSender;
+	private JavaMailSender mailSender;
 	
 	@Autowired
 	private MailConstructor mailConstructor;
